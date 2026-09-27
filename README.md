@@ -1,6 +1,6 @@
 # 奇点算法组知识库
 
-直接访问 <https://nomane-0.github.io/QD_Algorithm_Library/#/>
+直接访问 <https://zifeiyu0608.github.io/QD_Algorithm_Library/#/>
 
 ## 本地使用指南
 
