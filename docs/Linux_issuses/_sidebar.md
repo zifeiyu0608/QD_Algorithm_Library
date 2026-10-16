@@ -1,2 +1,3 @@
 - [华硕双显卡笔记本 Linux 动态背光修复教程](华硕双显卡笔记本%20Linux%20动态背光修复教程.md)
 - [Fedora KDE 以太网网络共享下无法解析 rock-5b.local 的原因与解决记录](Fedora%20KDE%20以太网网络共享下无法解析%20rock-5b.local%20的原因与解决记录.md)
+- [NVIDIA显卡在 Linux下 锁功率的解锁教程](NVIDIA显卡在Linux下锁功率的解锁教程.md)
