@@ -37,11 +37,16 @@ sysctl -a | grep forward
 # net.ipv6.conf.all.forwarding = 1
 ```
 
+一键配置（可选）
+```bash 
+sudo bash -c 'grep -q "^net.ipv4.ip_forward = 1$" /etc/sysctl.conf || echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf; grep -q "^net.ipv4.conf.all.forwarding = 1$" /etc/sysctl.conf || echo "net.ipv4.conf.all.forwarding = 1" >> /etc/sysctl.conf; grep -q "^net.ipv6.conf.all.forwarding = 1$" /etc/sysctl.conf || echo "net.ipv6.conf.all.forwarding = 1" >> /etc/sysctl.conf; sysctl -p'
+```
+
 #### 启用 NAT
 
 启用 NAT 来将无线网卡的网络供给有线网卡
 
-这里默认 net0 为有线网卡，internet0 为无线网卡，使用`ip a`查看网卡名称
+这里默认 net0 为有线网卡，internet0 为无线网卡，都要替换成真实的，使用`ip a`查看网卡名称
 
 ```bash
 iptables -t nat -A POSTROUTING -o internet0 -j MASQUERADE
@@ -50,6 +55,9 @@ iptables -A FORWARD -i net0 -o internet0 -j ACCEPT
 ```
 
 > 该命令重启后会失效，如想一直使用建议写入自启动脚本
+
+（可选，自启动脚本，要换为真实网卡，[自动启用NAT](NAT.md)）
+
 
 > 参考资料：[网络分享](https://wiki.archlinuxcn.org/wiki/%E7%BD%91%E7%BB%9C%E5%88%86%E4%BA%AB#)
 
