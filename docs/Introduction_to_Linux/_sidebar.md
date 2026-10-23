@@ -1,5 +1,6 @@
 
 - Linux入门
+  - [ubuntu双系统安装常见问题](./install_ubuntu.md)
   - [ubuntu 入门环境配置](./hello_ubuntu.md)
   - [基础命令](Basic_commands.md)
   - [Git](Git.md)
