@@ -13,7 +13,7 @@
   - [CLion](CLion_setting.md)
   - [clangd 代码提示](clangd.md)
   - [ROS](ROS.md)
-  - [QEMU 模拟器](qemu.md)
+  - [ARM 交叉编译与部署](qemu.md)
   - [NVIDIA](NVIDIA.md)
   - [Foxglove](Foxglove.md)
   - [共享网络](Shared_network.md)
