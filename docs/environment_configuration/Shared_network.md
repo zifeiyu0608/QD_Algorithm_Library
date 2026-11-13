@@ -48,6 +48,15 @@ sudo bash -c 'grep -q "^net.ipv4.ip_forward = 1$" /etc/sysctl.conf || echo "net.
 
 这里默认 net0 为有线网卡，internet0 为无线网卡，都要替换成真实的，使用`ip a`查看网卡名称
 
+要先开启内核转发（必须）
+```bash
+#临时开启，重启失效
+sudo sysctl -w net.ipv4.ip_forward=1
+# 永久开启（可选）
+echo 'net.ipv4.ip_forward=1' | sudo tee /etc/sysctl.d/99-ipforward.conf
+sudo sysctl -p /etc/sysctl.d/99-ipforward.conf
+```
+
 ```bash
 iptables -t nat -A POSTROUTING -o internet0 -j MASQUERADE
 iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
